@@ -1,0 +1,99 @@
+head 
+meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+//- Let browser know website is optimized for mobile
+meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no')
+
+//CSS
+link(href="stylesheet/lib/materialize.min.css", type="text/css", rel="stylesheet")
+//link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css')
+
+//Import Google Icon Font
+link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet', type='text/css')
+
+//customize stylesheet
+link(href="stylesheet/style.css", type="text/css", rel="stylesheet")
+
+
+style.
+  body {
+  background-color: #efebe9
+  }
+
+body
+  //top-banner
+  div(class='cyan lighten-2' style='height: 100%;' onload='myFunction()')
+    h1(class='center-align brown-text text-darken-2' style='line-height: 50vw;')
+      | 
+      span(class=' orange-text text-lighten-3' style='font-weight: bold;') B 
+      | u s i n e s s b o o k
+  
+  //menu
+  div(class='brown lighten-5 row center-allign container' style='height: 100%;')
+    div(class='col s12' style='height: 13%')
+    img(class='col s4' src='images/bb_logo.jpg' alt='logo' style={'width':'20vw','height':'20vw'})
+    div(class='col s4 center-align orange lighten-3' style={'width':'20vw','height':'20vw'})
+      case data.signIn
+        when 0
+          input(placeholder='username' type='text')
+          input(placeholder='password' type='password')
+          //p forgot your password?
+          a(href='/register')
+            p register
+        when 1
+          h3 Hello, #{username}
+        default
+          a(href='/signin') 
+            h3 Sign in / Register
+    div(class='col s4 center-align brown darken-2' style={'width':'20vw','height':'20vw', 'float':'right'}) 
+      h3 Search
+      form
+        div(class='input-field')
+        input(id='search' type='search' required)
+        label(class='label-icon' for='search')
+        i(class='material-icons')
+          search
+        i(class='material-icons')
+          close
+        a(href='/FindRandom' class='center-align')
+          p advanced
+    div(class='col s4 center-align brown darken-2' style={'width':'20vw','height':'20vw'}) 
+      a(href='https://www.wikiwand.com/de/Business')
+        h3 Knowledge Page     
+    div(class='col s4 center-align cyan lighten-2 container' style={'width':'20vw','height':'20vw'}) 
+      a(href='/calendar')
+        h3 Event Calendar
+    div(class='col s4 center-align orange lighten-3' style={'width':'20vw','height':'20vw'}) 
+      //a(href='add page link here')    
+      h3 Browse Company
+
+  //static pages
+  div(class='blue-text darken-3')
+    p contact us
+    p FAQs
+
+
+include _footer.pug
+include _script.pug
+
+
+script.
+  $(document).ready(function(){
+  $.scrollTo($('#scroll'), 1000);
+  });
+
+//-clicked
+  when 0 
+    h3 username
+    h3 password
+    p forgot your password?
+    p register
+  //already signed in
+  when 1
+    //img profilePicture
+    h3 Hello, #{username}
+  //register
+  when 2 
+    h3 name
+    h3 email
+    h3 password
+    h3 password again

@@ -1,0 +1,43 @@
+include _head.pug
+          
+main.green.accent-1
+
+  form.col.s6
+    div.row
+      input.col.s7.push-s5(placeholder='Name',type ='text') 
+      h5.col.s5.pull-s7 Full Name
+
+    div.input-field.row 
+      select.browser-default.col.s7.push-s5
+        option(value='', disabled='', selected='') Choose your option
+        option(value='1') Option 1
+        option(value='2') Option 2
+        option(value='3') Option 3
+      h5.col.s5.pull-s7 Company Field
+
+
+    div.row 
+      input.col.s7.push-s5(placeholder='Age', type ='text')
+      h5.col.s5.pull-s7 Company Age
+
+    div.row 
+      div.col.s12.m5
+        h5 Foundet  
+      div.col.s12.m6.l3
+        a.waves-effect.waves-light.btn before   
+        a.waves-effect.waves-light.btn in
+        a.waves-effect.waves-light.btn after
+      div.col.s12.m6.l3                   
+        input(placeholder='Placeholder', type ='text')
+
+
+
+    div.row 
+      input.col.s7.push-s5(placeholder='town', type ='text') 
+      h5.col.s5.pull-s7 Area
+
+  div.row                    
+    a.waves-effect.waves-light.btn.right Search
+
+
+include _footer.pug

@@ -1,0 +1,37 @@
+include _head.pug
+    
+main
+  table.col.s6
+    tbody.responsive-table
+      tr
+        td Company Name
+        td 
+          input(placeholder='Name',type ='text') 
+      tr
+        td Company Field
+        td 
+          select.browser-default.col.s7.push-s5
+              option(value='', disabled='', selected='') Choose your option
+              option(value='1') Option 1
+              option(value='2') Option 2
+              option(value='3') Option 3
+      tr
+        td Company Age
+        td 
+          input(placeholder='Name',type ='text') 
+      tr
+        td Foundet
+        td 
+            div.col.s6
+              a.waves-effect.waves-light.btn before   
+              a.waves-effect.waves-light.btn in
+              a.waves-effect.waves-light.btn after
+        td 
+          input(placeholder='Name',type ='text') 
+      tr
+        td Area
+        td 
+          input(placeholder='Name',type ='text')  
+    
+    
+include _footer.html
